@@ -12,33 +12,37 @@ public class Main {
         
         System.out.println("Input key: ");
         String key = scanner.nextLine();
-        scanner.close();
+        //scanner.close();
         DocumentWorker documentWorker;
         
         switch (key) {
         case keyPro: {
             documentWorker = new ProDocumentWorker();
+            break;
         }
         case keyExpert: {
             documentWorker = new ExpertDocumentWorker();
+            break;
         }
         default:
             documentWorker = new DocumentWorker();
+            break;
         }
         
         System.out.println("Input kode: \n1:Open\n2:Edit\n3:Save\n");
-        Scanner sc = new Scanner(System.in);
-        int kode = sc.nextInt();
-        sc.close();
+        int kode = scanner.nextInt();
         switch (kode) {
         case 1: {
             documentWorker.openDocument();
+            break;
         }
         case 2:{
             documentWorker.editDocument();
+            break;
         }
         case 3:{
             documentWorker.saveDocument();
+            break;
         }
         }
     }
